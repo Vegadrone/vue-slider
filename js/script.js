@@ -69,7 +69,7 @@ const app = new Vue (
 
             nextSlide: function(){
 
-                this.currentSlide++
+                this.currentSlide++;
 
                 if (this.currentSlide === this.slides.length) {
                     this.currentSlide = 0;
@@ -79,7 +79,7 @@ const app = new Vue (
 
             prevSlide: function(){
 
-                this.currentSlide--
+                this.currentSlide--;
 
                 if (this.currentSlide === -1) {
                     this.currentSlide = this.slides.length -1;
@@ -88,15 +88,15 @@ const app = new Vue (
 
             },
 
-            thumbChooseSlide: function(){
-                this.currentSlide.
-                console.log('cliccato')
-            }
+        //creo una funzione che accetta come argomento l'index del v-for
+            thumbChooseSlide: function(indexChange){  
+              this.currentSlide = indexChange;
+            },
     
         },
 
         created(){
-           setInterval (this.nextSlide, 3000)
+           setInterval (this.nextSlide, 3000);
         }
     }      
 
@@ -104,7 +104,6 @@ const app = new Vue (
 
 
 // 1 - al click su una thumb, visualizzare in grande l'immagine corrispondente
-// 2 - applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente
 // 3 - quando il mouse va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando esce
 
 //
